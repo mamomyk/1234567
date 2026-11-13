@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой первый сайт</title>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t),k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=114231327', 'ym');
+
+        ym(114231327, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/114231327" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 0 20px;
+            text-align: center;
+            color: #333;
+        }
+        h1 { font-size: 28px; }
+        p  { font-size: 17px; line-height: 1.5; }
+        button {
+            background: #2c7be5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 14px 32px;
+            font-size: 17px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover { background: #1a5fc4; }
+        #thanks { display: none; margin-top: 20px; color: #1a7f37; font-weight: bold; }
+        form { margin-top: 20px; }
+        input {
+            padding: 10px;
+            width: 70%;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Привет! Это наш учебный сайт</h1>
+
+    <p>Мы учимся подключать Яндекс Метрику, настраивать цели
+       и проводить эксперименты.</p>
+
+    <button id="lead-btn">Оставить заявку</button>
+
+    <form id="lead-form">
+        <input type="email" placeholder="Ваш e-mail" required>
+        <br><br>
+        <button type="submit">Отправить</button>
+    </form>
+
+    <div id="thanks">Спасибо! Заявка отправлена 🎉</div>
+
+    <script>
+        document.getElementById('lead-btn').addEventListener('click', function () {
+            ym(114231327, 'reachGoal', 'lead_click');
+        });
+
+        document.getElementById('lead-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            ym(114231327, 'reachGoal', 'form_submit');
+            document.getElementById('thanks').style.display = 'block';
+            this.style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>
